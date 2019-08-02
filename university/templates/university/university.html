@@ -1,0 +1,24 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'university/css/style.css' %}"/>
+{% block content %}
+ <section class="section-bg">
+      <div class="container">
+        <header class="section-header">
+          <h1>South African Universities</h1>
+          <p>Choose the best institution to quick start your careers.</p>
+          <p></p>
+        </header>
+        <div class="flex wrap skills">
+        {% for u in university %}
+          <div class="card">
+            <img src="{{ u.logo.url }}" alt="">
+            <h2>{{ u.name}}</h2>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </section>
+{% endblock content %}
